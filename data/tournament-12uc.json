@@ -1,0 +1,1007 @@
+{
+ "event": {
+  "id": 13457,
+  "name": "GIRLS RULE 65 MIN POOL 6GG \"C\" AND OPEN",
+  "division": "12U C",
+  "dates": "Sep 19-20, 2026",
+  "cities": "Georgetown / Gatesville / Killeen, TX",
+  "director": "Maggie Stoecklein",
+  "gate": "Gate fee cash only \u2014 Weekend pass $20, day pass $15, 12 & under free",
+  "schedule_url": "https://playncs.com/FASTPITCH/Events/Schedule/13457/girls-rule-65-min-pool-6gg-c-and-open?division=12U%20C",
+  "standings_url": "https://playncs.com/FASTPITCH/Events/Standings/13457/girls-rule-65-min-pool-6gg-c-and-open?division=12U%20C",
+  "bracket_url": "https://playncs.com/FASTPITCH/Events/Bracket/13457/girls-rule-65-min-pool-6gg-c-and-open?division=12U%20C",
+  "scraped_at": "2026-09-20T06:06:24+00:00"
+ },
+ "standings": [
+  {
+   "rank": 1,
+   "team": "LONESTAR SOFTBALL CLUB CENTRAL-12U SMITH",
+   "record": "4-0-0",
+   "ra": 3,
+   "rd": 27,
+   "rs": 30,
+   "pts": 300
+  },
+  {
+   "rank": 2,
+   "team": "Blaze 2033",
+   "record": "4-0-0",
+   "ra": 8,
+   "rd": 24,
+   "rs": 34,
+   "pts": 500
+  },
+  {
+   "rank": 3,
+   "team": "Texas Thunder",
+   "record": "4-0-0",
+   "ra": 21,
+   "rd": 24,
+   "rs": 45,
+   "pts": 100
+  },
+  {
+   "rank": 4,
+   "team": "CenTex Bandits",
+   "record": "3-1-0",
+   "ra": 9,
+   "rd": 16,
+   "rs": 27,
+   "pts": 0
+  },
+  {
+   "rank": 5,
+   "team": "Drip Select 12U-Armstrong",
+   "record": "3-1-0",
+   "ra": 11,
+   "rd": 7,
+   "rs": 18,
+   "pts": 0
+  },
+  {
+   "rank": 6,
+   "team": "CTX Bombers-Meza",
+   "record": "3-1-0",
+   "ra": 22,
+   "rd": 11,
+   "rs": 33,
+   "pts": 200
+  },
+  {
+   "rank": 7,
+   "team": "Texas Twelve Capital City 11u Maroon",
+   "record": "2-2-0",
+   "ra": 19,
+   "rd": 6,
+   "rs": 25,
+   "pts": 500
+  },
+  {
+   "rank": 8,
+   "team": "Riptide ATX Mejia-12U",
+   "record": "2-2-0",
+   "ra": 26,
+   "rd": 3,
+   "rs": 30,
+   "pts": 150
+  },
+  {
+   "rank": 9,
+   "team": "Bombers CTX 2k15",
+   "record": "2-2-0",
+   "ra": 30,
+   "rd": -1,
+   "rs": 29,
+   "pts": 400
+  },
+  {
+   "rank": 10,
+   "team": "WHGS Unbreakable 12U",
+   "record": "2-2-0",
+   "ra": 35,
+   "rd": -2,
+   "rs": 32,
+   "pts": 100
+  },
+  {
+   "rank": 11,
+   "team": "Texas Blaze Waco 12U",
+   "record": "1-3-0",
+   "ra": 15,
+   "rd": -11,
+   "rs": 4,
+   "pts": 1200
+  },
+  {
+   "rank": 12,
+   "team": "Texas Venom 12U",
+   "record": "1-3-0",
+   "ra": 32,
+   "rd": 0,
+   "rs": 34,
+   "pts": 200
+  },
+  {
+   "rank": 13,
+   "team": "CoreSpeed Fastpitch",
+   "record": "1-3-0",
+   "ra": 38,
+   "rd": -22,
+   "rs": 13,
+   "pts": 0
+  },
+  {
+   "rank": 14,
+   "team": "12U BAMBINAS",
+   "record": "0-4-0",
+   "ra": 41,
+   "rd": -27,
+   "rs": 14,
+   "pts": 0
+  },
+  {
+   "rank": 15,
+   "team": "WarHawks",
+   "record": "0-4-0",
+   "ra": 41,
+   "rd": -29,
+   "rs": 10,
+   "pts": 300
+  },
+  {
+   "rank": 16,
+   "team": "Lady Bearcats",
+   "record": "0-4-0",
+   "ra": 43,
+   "rd": -26,
+   "rs": 16,
+   "pts": 0
+  }
+ ],
+ "pool_games": [
+  {
+   "game": "1",
+   "time": "Sat 8:00 AM",
+   "field": "McMaster Athletic Complex 1",
+   "home": "Texas Venom 12U",
+   "away": "Bombers CTX 2k15",
+   "home_score": 10,
+   "away_score": 11,
+   "score_label": "10 - 11"
+  },
+  {
+   "game": "2",
+   "time": "Sat 8:00 AM",
+   "field": "McMaster Athletic Complex 2",
+   "home": "CoreSpeed Fastpitch",
+   "away": "WHGS Unbreakable 12U",
+   "home_score": 0,
+   "away_score": 11,
+   "score_label": "0 - 11"
+  },
+  {
+   "game": "3",
+   "time": "Sat 8:00 AM",
+   "field": "McMaster Athletic Complex 3",
+   "home": "CTX Bombers-Meza",
+   "away": "12U BAMBINAS",
+   "home_score": 12,
+   "away_score": 6,
+   "score_label": "12 - 6"
+  },
+  {
+   "game": "4",
+   "time": "Sat 8:00 AM",
+   "field": "McMaster Athletic Complex 4",
+   "home": "Texas Twelve Capital City 11u Maroon",
+   "away": "WarHawks",
+   "home_score": 10,
+   "away_score": 3,
+   "score_label": "10 - 3"
+  },
+  {
+   "game": "5",
+   "time": "Sat 9:15 AM",
+   "field": "McMaster Athletic Complex 1",
+   "home": "Texas Venom 12U",
+   "away": "WHGS Unbreakable 12U",
+   "home_score": 14,
+   "away_score": 2,
+   "score_label": "14 - 2"
+  },
+  {
+   "game": "6",
+   "time": "Sat 9:15 AM",
+   "field": "McMaster Athletic Complex 2",
+   "home": "Bombers CTX 2k15",
+   "away": "CoreSpeed Fastpitch",
+   "home_score": 12,
+   "away_score": 5,
+   "score_label": "12 - 5"
+  },
+  {
+   "game": "7",
+   "time": "Sat 9:15 AM",
+   "field": "McMaster Athletic Complex 3",
+   "home": "CTX Bombers-Meza",
+   "away": "WarHawks",
+   "home_score": 10,
+   "away_score": 5,
+   "score_label": "10 - 5"
+  },
+  {
+   "game": "8",
+   "time": "Sat 9:15 AM",
+   "field": "McMaster Athletic Complex 4",
+   "home": "12U BAMBINAS",
+   "away": "Texas Twelve Capital City 11u Maroon",
+   "home_score": 3,
+   "away_score": 12,
+   "score_label": "3 - 12"
+  },
+  {
+   "game": "9",
+   "time": "Sat 10:30 AM",
+   "field": "McMaster Athletic Complex 1",
+   "home": "Texas Venom 12U",
+   "away": "Riptide ATX Mejia-12U",
+   "home_score": 7,
+   "away_score": 12,
+   "score_label": "7 - 12"
+  },
+  {
+   "game": "10",
+   "time": "Sat 10:30 AM",
+   "field": "McMaster Athletic Complex 2",
+   "home": "CoreSpeed Fastpitch",
+   "away": "Lady Bearcats",
+   "home_score": 8,
+   "away_score": 3,
+   "score_label": "8 - 3"
+  },
+  {
+   "game": "11",
+   "time": "Sat 10:30 AM",
+   "field": "McMaster Athletic Complex 3",
+   "home": "CTX Bombers-Meza",
+   "away": "Texas Blaze Waco 12U",
+   "home_score": 8,
+   "away_score": 1,
+   "score_label": "8 - 1"
+  },
+  {
+   "game": "12",
+   "time": "Sat 10:30 AM",
+   "field": "McMaster Athletic Complex 4",
+   "home": "Texas Twelve Capital City 11u Maroon",
+   "away": "Drip Select 12U-Armstrong",
+   "home_score": 3,
+   "away_score": 5,
+   "score_label": "3 - 5"
+  },
+  {
+   "game": "13",
+   "time": "Sat 11:45 AM",
+   "field": "McMaster Athletic Complex 1",
+   "home": "Riptide ATX Mejia-12U",
+   "away": "Lady Bearcats",
+   "home_score": 12,
+   "away_score": 1,
+   "score_label": "12 - 1"
+  },
+  {
+   "game": "14",
+   "time": "Sat 11:45 AM",
+   "field": "McMaster Athletic Complex 2",
+   "home": "Bombers CTX 2k15",
+   "away": "Texas Thunder",
+   "home_score": 5,
+   "away_score": 9,
+   "score_label": "5 - 9"
+  },
+  {
+   "game": "15",
+   "time": "Sat 11:45 AM",
+   "field": "McMaster Athletic Complex 3",
+   "home": "Texas Blaze Waco 12U",
+   "away": "Drip Select 12U-Armstrong",
+   "home_score": 3,
+   "away_score": 0,
+   "score_label": "3 - 0"
+  },
+  {
+   "game": "16",
+   "time": "Sat 11:45 AM",
+   "field": "McMaster Athletic Complex 4",
+   "home": "12U BAMBINAS",
+   "away": "CenTex Bandits",
+   "home_score": 5,
+   "away_score": 7,
+   "score_label": "5 - 7"
+  },
+  {
+   "game": "17",
+   "time": "Sat 1:00 PM",
+   "field": "McMaster Athletic Complex 1",
+   "home": "CoreSpeed Fastpitch",
+   "away": "Blaze 2033",
+   "home_score": 0,
+   "away_score": 12,
+   "score_label": "0 - 12"
+  },
+  {
+   "game": "18",
+   "time": "Sat 1:00 PM",
+   "field": "McMaster Athletic Complex 2",
+   "home": "WHGS Unbreakable 12U",
+   "away": "Texas Thunder",
+   "home_score": 9,
+   "away_score": 14,
+   "score_label": "9 - 14"
+  },
+  {
+   "game": "19",
+   "time": "Sat 1:00 PM",
+   "field": "McMaster Athletic Complex 3",
+   "home": "Texas Twelve Capital City 11u Maroon",
+   "away": "LONESTAR SOFTBALL CLUB CENTRAL-12U SMITH",
+   "home_score": 0,
+   "away_score": 8,
+   "score_label": "0 - 8"
+  },
+  {
+   "game": "20",
+   "time": "Sat 1:00 PM",
+   "field": "McMaster Athletic Complex 4",
+   "home": "WarHawks",
+   "away": "CenTex Bandits",
+   "home_score": 0,
+   "away_score": 12,
+   "score_label": "0 - 12"
+  },
+  {
+   "game": "21",
+   "time": "Sat 2:15 PM",
+   "field": "McMaster Athletic Complex 1",
+   "home": "Texas Venom 12U",
+   "away": "Blaze 2033",
+   "home_score": 3,
+   "away_score": 7,
+   "score_label": "3 - 7"
+  },
+  {
+   "game": "22",
+   "time": "Sat 2:15 PM",
+   "field": "McMaster Athletic Complex 2",
+   "home": "WHGS Unbreakable 12U",
+   "away": "Lady Bearcats",
+   "home_score": 10,
+   "away_score": 7,
+   "score_label": "10 - 7"
+  },
+  {
+   "game": "23",
+   "time": "Sat 2:15 PM",
+   "field": "McMaster Athletic Complex 3",
+   "home": "CTX Bombers-Meza",
+   "away": "LONESTAR SOFTBALL CLUB CENTRAL-12U SMITH",
+   "home_score": 3,
+   "away_score": 10,
+   "score_label": "3 - 10"
+  },
+  {
+   "game": "24",
+   "time": "Sat 2:15 PM",
+   "field": "McMaster Athletic Complex 4",
+   "home": "WarHawks",
+   "away": "Drip Select 12U-Armstrong",
+   "home_score": 2,
+   "away_score": 9,
+   "score_label": "2 - 9"
+  },
+  {
+   "game": "25",
+   "time": "Sat 3:30 PM",
+   "field": "McMaster Athletic Complex 1",
+   "home": "Bombers CTX 2k15",
+   "away": "Blaze 2033",
+   "home_score": 1,
+   "away_score": 6,
+   "score_label": "1 - 6"
+  },
+  {
+   "game": "26",
+   "time": "Sat 3:30 PM",
+   "field": "McMaster Athletic Complex 2",
+   "home": "Riptide ATX Mejia-12U",
+   "away": "Texas Thunder",
+   "home_score": 2,
+   "away_score": 9,
+   "score_label": "2 - 9"
+  },
+  {
+   "game": "27",
+   "time": "Sat 3:30 PM",
+   "field": "McMaster Athletic Complex 3",
+   "home": "12U BAMBINAS",
+   "away": "LONESTAR SOFTBALL CLUB CENTRAL-12U SMITH",
+   "home_score": 0,
+   "away_score": 10,
+   "score_label": "0 - 10"
+  },
+  {
+   "game": "28",
+   "time": "Sat 3:30 PM",
+   "field": "McMaster Athletic Complex 4",
+   "home": "Texas Blaze Waco 12U",
+   "away": "CenTex Bandits",
+   "home_score": 0,
+   "away_score": 5,
+   "score_label": "0 - 5"
+  },
+  {
+   "game": "29",
+   "time": "Sat 4:45 PM",
+   "field": "McMaster Athletic Complex 1",
+   "home": "Riptide ATX Mejia-12U",
+   "away": "Blaze 2033",
+   "home_score": 4,
+   "away_score": 9,
+   "score_label": "4 - 9"
+  },
+  {
+   "game": "30",
+   "time": "Sat 4:45 PM",
+   "field": "McMaster Athletic Complex 2",
+   "home": "Lady Bearcats",
+   "away": "Texas Thunder",
+   "home_score": 5,
+   "away_score": 13,
+   "score_label": "5 - 13"
+  },
+  {
+   "game": "31",
+   "time": "Sat 4:45 PM",
+   "field": "McMaster Athletic Complex 3",
+   "home": "Texas Blaze Waco 12U",
+   "away": "LONESTAR SOFTBALL CLUB CENTRAL-12U SMITH",
+   "home_score": 0,
+   "away_score": 2,
+   "score_label": "0 - 2"
+  },
+  {
+   "game": "32",
+   "time": "Sat 4:45 PM",
+   "field": "McMaster Athletic Complex 4",
+   "home": "Drip Select 12U-Armstrong",
+   "away": "CenTex Bandits",
+   "home_score": 4,
+   "away_score": 3,
+   "score_label": "4 - 3"
+  }
+ ],
+ "brackets": [
+  {
+   "label": "Gold",
+   "sections": [
+    {
+     "name": "Championship Bracket",
+     "kind": "winners",
+     "games": [
+      {
+       "num": "Game 1",
+       "when": "9/20 | 8:00 AM",
+       "place": "Field 1 @ McMaster Athletic Complex",
+       "top": {
+        "seed": "#1",
+        "name": "LONESTAR SOFTBALL CLUB CENTRAL-12U SMITH",
+        "score": "",
+        "winner": false
+       },
+       "bottom": {
+        "seed": "#8",
+        "name": "Riptide ATX Mejia-12U",
+        "score": "",
+        "winner": false
+       }
+      },
+      {
+       "num": "Game 2",
+       "when": "9/20 | 8:00 AM",
+       "place": "Field 2 @ McMaster Athletic Complex",
+       "top": {
+        "seed": "#4",
+        "name": "CenTex Bandits",
+        "score": "",
+        "winner": false
+       },
+       "bottom": {
+        "seed": "#5",
+        "name": "Drip Select 12U-Armstrong",
+        "score": "",
+        "winner": false
+       }
+      },
+      {
+       "num": "Game 3",
+       "when": "9/20 | 9:30 AM",
+       "place": "Field 1 @ McMaster Athletic Complex",
+       "top": {
+        "seed": "#2",
+        "name": "Blaze 2033",
+        "score": "",
+        "winner": false
+       },
+       "bottom": {
+        "seed": "#7",
+        "name": "Texas Twelve Capital City 11u Maroon",
+        "score": "",
+        "winner": false
+       }
+      },
+      {
+       "num": "Game 4",
+       "when": "9/20 | 9:30 AM",
+       "place": "Field 2 @ McMaster Athletic Complex",
+       "top": {
+        "seed": "#3",
+        "name": "Texas Thunder",
+        "score": "",
+        "winner": false
+       },
+       "bottom": {
+        "seed": "#6",
+        "name": "CTX Bombers-Meza",
+        "score": "",
+        "winner": false
+       }
+      },
+      {
+       "num": "Game 5",
+       "when": "9/20 | 12:30 PM",
+       "place": "Field 1 @ McMaster Athletic Complex",
+       "top": {
+        "seed": "",
+        "name": "Winner of Game 1",
+        "score": "",
+        "winner": false
+       },
+       "bottom": {
+        "seed": "",
+        "name": "Winner of Game 2",
+        "score": "",
+        "winner": false
+       }
+      },
+      {
+       "num": "Game 6",
+       "when": "9/20 | 12:30 PM",
+       "place": "Field 2 @ McMaster Athletic Complex",
+       "top": {
+        "seed": "",
+        "name": "Winner of Game 3",
+        "score": "",
+        "winner": false
+       },
+       "bottom": {
+        "seed": "",
+        "name": "Winner of Game 4",
+        "score": "",
+        "winner": false
+       }
+      },
+      {
+       "num": "Game 11",
+       "when": "9/20 | 3:30 PM",
+       "place": "Field 1 @ McMaster Athletic Complex",
+       "top": {
+        "seed": "",
+        "name": "Winner of Game 5",
+        "score": "",
+        "winner": false
+       },
+       "bottom": {
+        "seed": "",
+        "name": "Winner of Game 6",
+        "score": "",
+        "winner": false
+       }
+      }
+     ]
+    },
+    {
+     "name": "Elimination Bracket",
+     "kind": "losers",
+     "games": [
+      {
+       "num": "Game 7",
+       "when": "9/20 | 11:00 AM",
+       "place": "Field 1 @ McMaster Athletic Complex",
+       "top": {
+        "seed": "",
+        "name": "Loser of Game 1",
+        "score": "",
+        "winner": false
+       },
+       "bottom": {
+        "seed": "",
+        "name": "Loser of Game 2",
+        "score": "",
+        "winner": false
+       }
+      },
+      {
+       "num": "Game 8",
+       "when": "9/20 | 11:00 AM",
+       "place": "Field 2 @ McMaster Athletic Complex",
+       "top": {
+        "seed": "",
+        "name": "Loser of Game 3",
+        "score": "",
+        "winner": false
+       },
+       "bottom": {
+        "seed": "",
+        "name": "Loser of Game 4",
+        "score": "",
+        "winner": false
+       }
+      },
+      {
+       "num": "Game 9",
+       "when": "9/20 | 2:00 PM",
+       "place": "Field 2 @ McMaster Athletic Complex",
+       "top": {
+        "seed": "",
+        "name": "Loser of Game 6",
+        "score": "",
+        "winner": false
+       },
+       "bottom": {
+        "seed": "",
+        "name": "Winner of Game 7",
+        "score": "",
+        "winner": false
+       }
+      },
+      {
+       "num": "Game 10",
+       "when": "9/20 | 2:00 PM",
+       "place": "Field 1 @ McMaster Athletic Complex",
+       "top": {
+        "seed": "",
+        "name": "Loser of Game 5",
+        "score": "",
+        "winner": false
+       },
+       "bottom": {
+        "seed": "",
+        "name": "Winner of Game 8",
+        "score": "",
+        "winner": false
+       }
+      },
+      {
+       "num": "Game 12",
+       "when": "9/20 | 3:30 PM",
+       "place": "Field 2 @ McMaster Athletic Complex",
+       "top": {
+        "seed": "",
+        "name": "Winner of Game 9",
+        "score": "",
+        "winner": false
+       },
+       "bottom": {
+        "seed": "",
+        "name": "Winner of Game 10",
+        "score": "",
+        "winner": false
+       }
+      },
+      {
+       "num": "Game 13",
+       "when": "9/20 | 5:50 PM",
+       "place": "Field 2 @ McMaster Athletic Complex",
+       "top": {
+        "seed": "",
+        "name": "Loser of Game 11",
+        "score": "",
+        "winner": false
+       },
+       "bottom": {
+        "seed": "",
+        "name": "Winner of Game 12",
+        "score": "",
+        "winner": false
+       }
+      }
+     ]
+    },
+    {
+     "name": "Final",
+     "kind": "combined",
+     "games": [
+      {
+       "num": "Game 14",
+       "when": "9/20 | 6:30 PM",
+       "place": "Field 2 @ McMaster Athletic Complex",
+       "top": {
+        "seed": "",
+        "name": "Winner of Game 11",
+        "score": "",
+        "winner": false
+       },
+       "bottom": {
+        "seed": "",
+        "name": "Winner of Game 13",
+        "score": "",
+        "winner": false
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Silver",
+   "sections": [
+    {
+     "name": "Silver Bracket",
+     "kind": "winners",
+     "games": [
+      {
+       "num": "Game 1",
+       "when": "9/20 | 8:00 AM",
+       "place": "Field 4 @ McMaster Athletic Complex",
+       "top": {
+        "seed": "#9",
+        "name": "Bombers CTX 2k15",
+        "score": "",
+        "winner": false
+       },
+       "bottom": {
+        "seed": "#16",
+        "name": "Lady Bearcats",
+        "score": "",
+        "winner": false
+       }
+      },
+      {
+       "num": "Game 2",
+       "when": "9/20 | 8:00 AM",
+       "place": "Field 3 @ McMaster Athletic Complex",
+       "top": {
+        "seed": "#12",
+        "name": "Texas Venom 12U",
+        "score": "",
+        "winner": false
+       },
+       "bottom": {
+        "seed": "#13",
+        "name": "CoreSpeed Fastpitch",
+        "score": "",
+        "winner": false
+       }
+      },
+      {
+       "num": "Game 3",
+       "when": "9/20 | 9:30 AM",
+       "place": "Field 4 @ McMaster Athletic Complex",
+       "top": {
+        "seed": "#10",
+        "name": "WHGS Unbreakable 12U",
+        "score": "",
+        "winner": false
+       },
+       "bottom": {
+        "seed": "#15",
+        "name": "WarHawks",
+        "score": "",
+        "winner": false
+       }
+      },
+      {
+       "num": "Game 4",
+       "when": "9/20 | 9:30 AM",
+       "place": "Field 3 @ McMaster Athletic Complex",
+       "top": {
+        "seed": "#11",
+        "name": "Texas Blaze Waco 12U",
+        "score": "",
+        "winner": false
+       },
+       "bottom": {
+        "seed": "#14",
+        "name": "12U BAMBINAS",
+        "score": "",
+        "winner": false
+       }
+      },
+      {
+       "num": "Game 5",
+       "when": "9/20 | 12:30 PM",
+       "place": "Field 4 @ McMaster Athletic Complex",
+       "top": {
+        "seed": "",
+        "name": "Winner of Game 1",
+        "score": "",
+        "winner": false
+       },
+       "bottom": {
+        "seed": "",
+        "name": "Winner of Game 2",
+        "score": "",
+        "winner": false
+       }
+      },
+      {
+       "num": "Game 6",
+       "when": "9/20 | 12:30 PM",
+       "place": "Field 3 @ McMaster Athletic Complex",
+       "top": {
+        "seed": "",
+        "name": "Winner of Game 3",
+        "score": "",
+        "winner": false
+       },
+       "bottom": {
+        "seed": "",
+        "name": "Winner of Game 4",
+        "score": "",
+        "winner": false
+       }
+      },
+      {
+       "num": "Game 11",
+       "when": "9/20 | 3:30 PM",
+       "place": "Field 4 @ McMaster Athletic Complex",
+       "top": {
+        "seed": "",
+        "name": "Winner of Game 5",
+        "score": "",
+        "winner": false
+       },
+       "bottom": {
+        "seed": "",
+        "name": "Winner of Game 6",
+        "score": "",
+        "winner": false
+       }
+      }
+     ]
+    },
+    {
+     "name": "Elimination Bracket",
+     "kind": "losers",
+     "games": [
+      {
+       "num": "Game 7",
+       "when": "9/20 | 11:00 AM",
+       "place": "Field 4 @ McMaster Athletic Complex",
+       "top": {
+        "seed": "",
+        "name": "Loser of Game 1",
+        "score": "",
+        "winner": false
+       },
+       "bottom": {
+        "seed": "",
+        "name": "Loser of Game 2",
+        "score": "",
+        "winner": false
+       }
+      },
+      {
+       "num": "Game 8",
+       "when": "9/20 | 11:00 AM",
+       "place": "Field 3 @ McMaster Athletic Complex",
+       "top": {
+        "seed": "",
+        "name": "Loser of Game 3",
+        "score": "",
+        "winner": false
+       },
+       "bottom": {
+        "seed": "",
+        "name": "Loser of Game 4",
+        "score": "",
+        "winner": false
+       }
+      },
+      {
+       "num": "Game 9",
+       "when": "9/20 | 2:00 PM",
+       "place": "Field 3 @ McMaster Athletic Complex",
+       "top": {
+        "seed": "",
+        "name": "Loser of Game 6",
+        "score": "",
+        "winner": false
+       },
+       "bottom": {
+        "seed": "",
+        "name": "Winner of Game 7",
+        "score": "",
+        "winner": false
+       }
+      },
+      {
+       "num": "Game 10",
+       "when": "9/20 | 2:00 PM",
+       "place": "Field 4 @ McMaster Athletic Complex",
+       "top": {
+        "seed": "",
+        "name": "Loser of Game 5",
+        "score": "",
+        "winner": false
+       },
+       "bottom": {
+        "seed": "",
+        "name": "Winner of Game 8",
+        "score": "",
+        "winner": false
+       }
+      },
+      {
+       "num": "Game 12",
+       "when": "9/20 | 3:30 PM",
+       "place": "Field 3 @ McMaster Athletic Complex",
+       "top": {
+        "seed": "",
+        "name": "Winner of Game 9",
+        "score": "",
+        "winner": false
+       },
+       "bottom": {
+        "seed": "",
+        "name": "Winner of Game 10",
+        "score": "",
+        "winner": false
+       }
+      },
+      {
+       "num": "Game 13",
+       "when": "9/20 | 5:00 PM",
+       "place": "Field 3 @ McMaster Athletic Complex",
+       "top": {
+        "seed": "",
+        "name": "Loser of Game 11",
+        "score": "",
+        "winner": false
+       },
+       "bottom": {
+        "seed": "",
+        "name": "Winner of Game 12",
+        "score": "",
+        "winner": false
+       }
+      }
+     ]
+    },
+    {
+     "name": "Final",
+     "kind": "combined",
+     "games": [
+      {
+       "num": "Game 14",
+       "when": "9/20 | 6:30 PM",
+       "place": "Field 3 @ McMaster Athletic Complex",
+       "top": {
+        "seed": "",
+        "name": "Winner of Game 11",
+        "score": "",
+        "winner": false
+       },
+       "bottom": {
+        "seed": "",
+        "name": "Winner of Game 13",
+        "score": "",
+        "winner": false
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
