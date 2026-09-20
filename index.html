@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Girls Rule — 12U C Tournament Tracker</title>
+  <meta name="description" content="12U C tournament tracker for the NCS Girls Rule 65 Min Pool 6GG C and Open — standings, pool play results, and Gold/Silver brackets." />
+  <style>
+:root {
+  --bg: #0c0510;
+  --panel: rgba(36, 14, 36, .88);
+  --line: rgba(255,255,255,.13);
+  --line2: rgba(255,77,166,.4);
+  --text: #fff7fb;
+  --muted: #d3b8c8;
+  --soft: #a88fa0;
+  --pink: #ff4da6;
+  --pink2: #ff8ac2;
+  --gold: #ffd166;
+  --silver: #c9d6e3;
+  --win: #7dff9b;
+  --shadow: 0 22px 80px rgba(0,0,0,.5);
+  --radius: 22px;
+  --max: 1180px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: var(--bg); }
+body {
+  margin: 0; min-height: 100vh; color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at 10% -8%, rgba(255,77,166,.28), transparent 30rem),
+    radial-gradient(circle at 92% 0%, rgba(255,209,102,.14), transparent 26rem),
+    linear-gradient(150deg, #0a0410 0%, #221024 48%, #0d0512 100%);
+}
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,.68), transparent 72%);
+}
+a { color: inherit; text-decoration: none; }
+button, input, select { font: inherit; }
+.page { position: relative; z-index: 1; }
+.container { width: min(var(--max), calc(100% - 30px)); margin: 0 auto; }
+.topbar {
+  position: sticky; top: 0; z-index: 50; backdrop-filter: blur(22px);
+  background: rgba(12,5,16,.8); border-bottom: 1px solid rgba(255,255,255,.09);
+}
+.nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 0; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.logoMark {
+  width: 46px; height: 46px; border-radius: 15px; display: grid; place-items: center;
+  background: linear-gradient(135deg, rgba(255,77,166,.3), rgba(255,209,102,.28));
+  border: 1px solid rgba(255,77,166,.42); color: var(--pink2); font-weight: 950;
+}
+.brand strong { display: block; line-height: 1.05; white-space: nowrap; }
+.brand span { color: var(--muted); font-size: .8rem; white-space: nowrap; }
+.navlinks { display: flex; flex-wrap: wrap; gap: 8px; }
+.btn, .navlinks a {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  border: 1px solid rgba(255,255,255,.14); border-radius: 999px;
+  background: rgba(255,255,255,.055); color: var(--muted); padding: 8px 13px; cursor: pointer;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease, color .18s ease;
+}
+.btn:hover, .navlinks a:hover { transform: translateY(-1px); border-color: var(--line2); color: var(--text); background: rgba(255,77,166,.1); }
+.btn.primary { border-color: transparent; color: #2a0618; background: linear-gradient(135deg, var(--pink), var(--pink2)); font-weight: 900; }
+.hero { padding: 44px 0 20px; }
+.panel {
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03)), var(--panel);
+  border-radius: var(--radius); box-shadow: var(--shadow);
+}
+.heroCard { padding: clamp(22px, 4vw, 40px); position: relative; overflow: hidden; }
+.heroCard::after {
+  content: ""; position: absolute; width: 320px; height: 320px; right: -120px; top: -130px;
+  background: radial-gradient(circle, rgba(255,77,166,.22), transparent 65%);
+}
+.kicker { display: inline-flex; align-items: center; gap: 8px; color: var(--pink2); font-weight: 900; letter-spacing: .13em; text-transform: uppercase; font-size: .74rem; }
+.pulse { width: 9px; height: 9px; border-radius: 50%; background: var(--pink); box-shadow: 0 0 0 0 rgba(255,77,166,.6); animation: pulse 2s infinite; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255,77,166,.55); } 70% { box-shadow: 0 0 0 10px rgba(255,77,166,0); } 100% { box-shadow: 0 0 0 0 rgba(255,77,166,0); } }
+h1 { margin: 12px 0 10px; font-size: clamp(2rem, 5.6vw, 4.4rem); line-height: .95; letter-spacing: -.05em; }
+.heroCard p { color: var(--muted); line-height: 1.6; font-size: 1rem; max-width: 820px; }
+.chips, .actions, .tags, .cardActions { display: flex; flex-wrap: wrap; gap: 9px; }
+.actions { margin-top: 20px; }
+.chips { margin-top: 20px; }
+.chip { border: 1px solid rgba(255,255,255,.13); background: rgba(255,255,255,.055); color: var(--muted); padding: 7px 11px; border-radius: 999px; font-size: .84rem; }
+.chip strong { color: var(--text); }
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px; margin-top: 18px; }
+.stat { padding: 16px; border-radius: 18px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.05); }
+.stat .num { display: block; font-weight: 950; font-size: clamp(1.5rem, 3.6vw, 2.2rem); letter-spacing: -.04em; color: var(--pink2); }
+.stat .label { display: block; color: var(--muted); font-size: .84rem; margin-top: 4px; }
+.section { padding: 20px 0; }
+.sectionHead { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 14px; flex-wrap: wrap; }
+.sectionHead h2 { margin: 0; font-size: clamp(1.5rem, 3vw, 2.2rem); letter-spacing: -.04em; }
+.sectionHead p { color: var(--muted); margin: .3rem 0 0; max-width: 720px; line-height: 1.55; }
+.field { display: grid; gap: 6px; }
+.field label { color: var(--soft); font-weight: 850; letter-spacing: .1em; text-transform: uppercase; font-size: .7rem; }
+.field input, .field select {
+  width: 100%; border-radius: 13px; border: 1px solid rgba(255,255,255,.13);
+  background: rgba(255,255,255,.075); color: var(--text); padding: 10px 12px; outline: none;
+}
+.field input:focus, .field select:focus { border-color: rgba(255,77,166,.55); box-shadow: 0 0 0 4px rgba(255,77,166,.08); }
+option { color: #2a0618; }
+.control { padding: 14px; border-radius: 18px; display: grid; grid-template-columns: minmax(240px,1fr) 220px auto; gap: 10px; align-items: end; margin-bottom: 14px; }
+.tableWrap { overflow-x: auto; border-radius: 16px; border: 1px solid rgba(255,255,255,.1); }
+table { border-collapse: collapse; width: 100%; min-width: 640px; }
+th, td { text-align: left; padding: 11px 12px; border-bottom: 1px solid rgba(255,255,255,.08); color: var(--muted); line-height: 1.35; }
+th { color: var(--soft); background: rgba(255,255,255,.045); font-size: .7rem; text-transform: uppercase; letter-spacing: .1em; white-space: nowrap; }
+td strong { color: var(--text); }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+tr:last-child td { border-bottom: 0; }
+tr.hl td { background: rgba(255,77,166,.12); }
+tr.hl td strong { color: var(--pink2); }
+.medal { display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; padding: 3px 9px; font-size: .72rem; font-weight: 900; }
+.medal.gold { color: var(--gold); background: rgba(255,209,102,.1); border: 1px solid rgba(255,209,102,.35); }
+.medal.silver { color: var(--silver); background: rgba(201,214,227,.1); border: 1px solid rgba(201,214,227,.3); }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 13px; }
+.gameCard { padding: 14px 15px; border-radius: 18px; display: grid; gap: 10px; }
+.gameCard.hl { border-color: var(--line2); background: linear-gradient(180deg, rgba(255,77,166,.1), rgba(255,255,255,.03)), var(--panel); }
+.gameMeta { display: flex; flex-wrap: wrap; gap: 8px; color: var(--soft); font-size: .8rem; }
+.gameMeta b { color: var(--pink2); }
+.matchup { display: grid; gap: 6px; }
+.teamRow { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 8px 11px; border-radius: 12px; border: 1px solid rgba(255,255,255,.09); background: rgba(255,255,255,.04); }
+.teamRow .nm { font-weight: 700; font-size: .95rem; }
+.teamRow .nm small { color: var(--soft); font-weight: 800; margin-right: 6px; }
+.teamRow .sc { font-weight: 950; font-size: 1.05rem; font-variant-numeric: tabular-nums; color: var(--muted); }
+.teamRow.won { border-color: rgba(125,255,155,.3); }
+.teamRow.won .nm, .teamRow.won .sc { color: var(--win); }
+.teamRow.hl { border-color: var(--line2); }
+.teamRow.hl .nm { color: var(--pink2); }
+.tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 13px; }
+.tab { border: 1px solid rgba(255,255,255,.14); border-radius: 999px; background: rgba(255,255,255,.055); color: var(--muted); padding: 8px 14px; cursor: pointer; font-weight: 800; }
+.tab.active { border-color: transparent; color: #2a0618; background: linear-gradient(135deg, var(--pink), var(--pink2)); }
+.tab.active.goldTab { background: linear-gradient(135deg, var(--gold), #ffe3a1); }
+.bracketSec { margin-bottom: 18px; }
+.bracketSec h3 { margin: 0 0 10px; font-size: 1.1rem; letter-spacing: -.02em; color: var(--pink2); text-transform: uppercase; }
+.bracketSec.goldSec h3 { color: var(--gold); }
+.empty { border: 1px dashed rgba(255,255,255,.25); background: rgba(255,255,255,.035); border-radius: 18px; padding: 26px; text-align: center; color: var(--muted); grid-column: 1/-1; }
+.footer { padding: 30px 0 44px; color: var(--muted); text-align: center; line-height: 1.7; font-size: .9rem; }
+.footer a { color: var(--pink2); }
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .stats { grid-template-columns: repeat(2,1fr); } .control { grid-template-columns: 1fr; } }
+@media (max-width: 620px) {
+  :root { --radius: 18px; }
+  .container { width: min(100% - 18px, var(--max)); }
+  .nav { padding: 9px 0; gap: 8px; }
+  .brand strong { font-size: .92rem; }
+  .brand span { font-size: .72rem; }
+  .logoMark { width: 40px; height: 40px; border-radius: 12px; }
+  .navlinks { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; width: 100%; justify-content: flex-start; scrollbar-width: none; }
+  .navlinks::-webkit-scrollbar { display: none; }
+  .navlinks a { flex: none; padding: 7px 11px; font-size: .82rem; }
+  .nav { flex-direction: column; align-items: flex-start; }
+  .hero { padding: 26px 0 12px; }
+  .heroCard { padding: 18px 16px; }
+  .heroCard p { font-size: .92rem; }
+  .chip { font-size: .78rem; padding: 6px 9px; }
+  .stats { grid-template-columns: repeat(2,1fr); gap: 8px; }
+  .stat { padding: 12px; min-height: 0; border-radius: 15px; }
+  .stat .label { font-size: .74rem; }
+  .section { padding: 14px 0; }
+  .control { padding: 12px; }
+  table { min-width: 560px; }
+  th, td { padding: 9px 10px; font-size: .86rem; }
+  .gameCard { padding: 12px 13px; border-radius: 16px; }
+  .teamRow { padding: 8px 10px; }
+  .teamRow .nm { font-size: .9rem; }
+  .btn { padding: 8px 12px; font-size: .88rem; }
+}
+@media print {
+  body { background: #fff; color: #111; }
+  body::before, .topbar, .control, .actions, .footer, .tabs { display: none !important; }
+  .panel, .gameCard, .stat { box-shadow: none; background: #fff; color: #111; border-color: #ddd; }
+  .grid { grid-template-columns: 1fr; }
+  td, .chip, .gameMeta, .stat .label { color: #333 !important; }
+}
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="container nav">
+        <a class="brand" href="index.html">
+          <span class="logoMark">GR</span>
+          <span><strong>Girls Rule</strong><span>12U C Tournament Tracker</span></span>
+        </a>
+        <nav class="navlinks">
+          <a href="#standings">Standings</a>
+          <a href="#pool">Pool Play</a>
+          <a href="#bracket">Brackets</a>
+          <a href="venom.html">Venom Dashboard</a>
+          <a id="ncsLink" href="#" target="_blank" rel="noopener">NCS Live Page</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container heroCard panel">
+          <span class="kicker"><span class="pulse"></span> NCS Fastpitch · Event 13457 · 12U C</span>
+          <h1 id="eventName">Girls Rule Tournament</h1>
+          <p id="eventMeta"></p>
+          <div class="actions">
+            <a class="btn primary" href="#standings">Standings</a>
+            <a class="btn" href="#pool">Pool Results</a>
+            <a class="btn" href="#bracket">Brackets</a>
+            <a class="btn" href="venom.html">🐍 Venom Dashboard</a>
+          </div>
+          <div class="chips" id="eventChips"></div>
+          <div class="stats" id="statCards"></div>
+        </div>
+      </section>
+
+      <section class="section" id="standings">
+        <div class="container">
+          <div class="sectionHead">
+            <div>
+              <h2>Pool Play Standings</h2>
+              <p>Final seeding after Saturday pool play. Seeds 1–8 advance to the <strong>Gold bracket</strong>, seeds 9–16 to the <strong>Silver bracket</strong>.</p>
+            </div>
+          </div>
+          <div class="control panel">
+            <div class="field">
+              <label for="teamPick">Highlight team</label>
+              <select id="teamPick"><option value="">— none —</option></select>
+            </div>
+            <div class="field">
+              <label for="q">Search games</label>
+              <input id="q" type="search" placeholder="Team, field, time…" />
+            </div>
+            <button class="btn" id="resetBtn" type="button">Reset</button>
+          </div>
+          <div class="tableWrap panel" style="border-radius:16px">
+            <table id="standingsTable">
+              <thead><tr><th>Seed</th><th>Team</th><th>Bracket</th><th class="num">W-L-T</th><th class="num">RS</th><th class="num">RA</th><th class="num">RD</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="pool">
+        <div class="container">
+          <div class="sectionHead">
+            <div>
+              <h2>Pool Play — Saturday</h2>
+              <p id="poolNote"></p>
+            </div>
+          </div>
+          <div class="grid" id="poolGrid"></div>
+        </div>
+      </section>
+
+      <section class="section" id="bracket">
+        <div class="container">
+          <div class="sectionHead">
+            <div>
+              <h2>Brackets — Sunday</h2>
+              <p>Double-elimination style: championship rounds, an elimination bracket, and a final. Matchups fill in on the NCS page as games finish — run the refresh script to update.</p>
+            </div>
+          </div>
+          <div class="tabs" id="bracketTabs"></div>
+          <div id="bracketBody"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        Girls Rule 12U C Tracker · Data from <a id="footNcs" href="#" target="_blank" rel="noopener">NCS Fastpitch</a>
+        · <span id="scrapedNote"></span><br>
+        Refresh scores anytime with <code>python3 scripts/refresh.py</code>
+      </div>
+    </footer>
+  </div>
+
+  <script src="data/tournament-12uc.js"></script>
+  <script>
+const T = window.TOURNAMENT;
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const DEFAULT_HL = "Texas Venom 12U";
+let hlTeam = T.standings.some(s => s.team === DEFAULT_HL) ? DEFAULT_HL : "";
+let activeBracket = 0;
+
+function bracketOf(rank) { return rank <= 8 ? "gold" : "silver"; }
+
+function renderHero() {
+  const e = T.event;
+  document.getElementById("eventName").textContent = "Girls Rule 12U C";
+  document.getElementById("eventMeta").textContent =
+    `${e.name} — ${e.dates} · ${e.cities} · Director: ${e.director}.`;
+  document.getElementById("ncsLink").href = e.schedule_url;
+  document.getElementById("footNcs").href = e.schedule_url;
+  document.getElementById("eventChips").innerHTML = `
+    <span class="chip"><strong>Dates:</strong> ${esc(e.dates)}</span>
+    <span class="chip"><strong>Format:</strong> 65 min pool · 6GG</span>
+    <span class="chip"><strong>Gate:</strong> ${esc(e.gate)}</span>`;
+  const done = T.pool_games.filter(g => g.home_score != null).length;
+  const runs = T.pool_games.reduce((a,g) => a + (g.home_score||0) + (g.away_score||0), 0);
+  document.getElementById("statCards").innerHTML = `
+    <div class="stat"><span class="num">${T.standings.length}</span><span class="label">Teams in 12U C</span></div>
+    <div class="stat"><span class="num">${done}/${T.pool_games.length}</span><span class="label">Pool games played</span></div>
+    <div class="stat"><span class="num">${runs}</span><span class="label">Total runs scored</span></div>
+    <div class="stat"><span class="num">2</span><span class="label">Sunday brackets (Gold + Silver)</span></div>`;
+  const when = e.scraped_at ? new Date(e.scraped_at).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" }) : "";
+  document.getElementById("scrapedNote").textContent = `Last refreshed ${when}`;
+}
+
+function renderStandings() {
+  document.querySelector("#standingsTable tbody").innerHTML = T.standings.map(s => `
+    <tr class="${s.team === hlTeam ? "hl" : ""}">
+      <td><strong>#${s.rank}</strong></td>
+      <td><strong>${esc(s.team)}</strong></td>
+      <td><span class="medal ${bracketOf(s.rank)}">${bracketOf(s.rank) === "gold" ? "Gold" : "Silver"}</span></td>
+      <td class="num">${esc(s.record)}</td>
+      <td class="num">${s.rs}</td>
+      <td class="num">${s.ra}</td>
+      <td class="num">${s.rd > 0 ? "+" + s.rd : s.rd}</td>
+    </tr>`).join("");
+}
+
+function gameCard(g) {
+  const played = g.home_score != null && g.away_score != null;
+  const homeWon = played && g.home_score > g.away_score;
+  const awayWon = played && g.away_score > g.home_score;
+  const hl = hlTeam && (g.home === hlTeam || g.away === hlTeam);
+  return `
+    <article class="gameCard panel ${hl ? "hl" : ""}">
+      <div class="gameMeta"><b>Game ${esc(g.game)}</b><span>${esc(g.time)}</span><span>· ${esc(g.field)}</span></div>
+      <div class="matchup">
+        <div class="teamRow ${homeWon ? "won" : ""} ${g.home === hlTeam ? "hl" : ""}"><span class="nm">${esc(g.home)}</span><span class="sc">${played ? g.home_score : "—"}</span></div>
+        <div class="teamRow ${awayWon ? "won" : ""} ${g.away === hlTeam ? "hl" : ""}"><span class="nm">${esc(g.away)}</span><span class="sc">${played ? g.away_score : "—"}</span></div>
+      </div>
+    </article>`;
+}
+
+function renderPool() {
+  const q = document.getElementById("q").value.trim().toLowerCase();
+  let games = T.pool_games;
+  if (hlTeam) games = [...games].sort((a,b) => (b.home===hlTeam||b.away===hlTeam) - (a.home===hlTeam||a.away===hlTeam));
+  if (q) games = games.filter(g => [g.home, g.away, g.field, g.time, g.game].join(" ").toLowerCase().includes(q));
+  document.getElementById("poolNote").textContent = hlTeam
+    ? `Showing all ${T.pool_games.length} pool games — ${hlTeam}'s games are pinned first and highlighted.`
+    : `All ${T.pool_games.length} pool games with final scores.`;
+  document.getElementById("poolGrid").innerHTML = games.length
+    ? games.map(gameCard).join("")
+    : `<div class="empty">No games match that search.</div>`;
+}
+
+function bracketRow(t) {
+  const isHl = hlTeam && t.name === hlTeam;
+  return `<div class="teamRow ${t.winner ? "won" : ""} ${isHl ? "hl" : ""}">
+    <span class="nm">${t.seed ? `<small>${esc(t.seed)}</small>` : ""}${esc(t.name || "TBD")}</span>
+    <span class="sc">${esc(t.score || "—")}</span></div>`;
+}
+
+function renderBrackets() {
+  document.getElementById("bracketTabs").innerHTML = T.brackets.map((b, i) => `
+    <button type="button" class="tab ${i === activeBracket ? "active" : ""} ${b.label === "Gold" && i === activeBracket ? "goldTab" : ""}" data-i="${i}">
+      ${b.label === "Gold" ? "🥇 Gold (Seeds 1–8)" : "🥈 Silver (Seeds 9–16)"}</button>`).join("");
+  document.querySelectorAll("#bracketTabs .tab").forEach(el =>
+    el.addEventListener("click", () => { activeBracket = +el.dataset.i; renderBrackets(); }));
+  const b = T.brackets[activeBracket];
+  document.getElementById("bracketBody").innerHTML = b.sections.map(sec => `
+    <div class="bracketSec ${b.label === "Gold" ? "goldSec" : ""}">
+      <h3>${esc(sec.name)}</h3>
+      <div class="grid">
+        ${sec.games.map(g => `
+          <article class="gameCard panel ${hlTeam && (g.top.name === hlTeam || g.bottom.name === hlTeam) ? "hl" : ""}">
+            <div class="gameMeta"><b>${esc(g.num)}</b><span>${esc(g.when)}</span><span>· ${esc(g.place)}</span></div>
+            <div class="matchup">${bracketRow(g.top)}${bracketRow(g.bottom)}</div>
+          </article>`).join("")}
+      </div>
+    </div>`).join("");
+}
+
+function renderAll() { renderHero(); renderStandings(); renderPool(); renderBrackets(); }
+
+const pick = document.getElementById("teamPick");
+T.standings.forEach(s => {
+  const o = document.createElement("option");
+  o.value = o.textContent = s.team;
+  pick.appendChild(o);
+});
+pick.value = hlTeam;
+pick.addEventListener("change", () => { hlTeam = pick.value; renderAll(); });
+document.getElementById("q").addEventListener("input", renderPool);
+document.getElementById("resetBtn").addEventListener("click", () => {
+  document.getElementById("q").value = ""; pick.value = hlTeam = ""; renderAll();
+});
+
+renderAll();
+  </script>
+</body>
+</html>
