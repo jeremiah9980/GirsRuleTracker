@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Texas Venom 12U — Girls Rule Dashboard</title>
+  <meta name="description" content="Texas Venom 12U dashboard for the NCS Girls Rule tournament — bracket path, pool results, standings, and the live GameChanger schedule." />
+  <meta name="theme-color" content="#07050d" />
+  <style>
+:root {
+  --bg: #07050d;
+  --panel: rgba(23, 14, 38, .9);
+  --line: rgba(255,255,255,.13);
+  --line2: rgba(190,255,0,.35);
+  --text: #fbf8ff;
+  --muted: #c2b7d1;
+  --soft: #9f95ad;
+  --venom: #baff00;
+  --purple: #8a4dff;
+  --gold: #ffd166;
+  --win: #7dff9b;
+  --loss: #ff7192;
+  --shadow: 0 18px 60px rgba(0,0,0,.45);
+  --r: 20px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: var(--bg); }
+body {
+  margin: 0; min-height: 100vh; color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at 14% -6%, rgba(138,77,255,.32), transparent 26rem),
+    radial-gradient(circle at 90% 0%, rgba(186,255,0,.13), transparent 22rem),
+    linear-gradient(150deg, #050308 0%, #120a20 48%, #08050f 100%);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+a { color: inherit; text-decoration: none; }
+.wrap { width: min(760px, 100% - 24px); margin: 0 auto; }
+.topbar {
+  position: sticky; top: 0; z-index: 50; backdrop-filter: blur(20px);
+  background: rgba(7,5,13,.82); border-bottom: 1px solid rgba(255,255,255,.09);
+}
+.nav { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 0; }
+.brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.logoMark {
+  width: 42px; height: 42px; border-radius: 13px; display: grid; place-items: center; flex: none;
+  background: linear-gradient(135deg, rgba(186,255,0,.22), rgba(138,77,255,.42));
+  border: 1px solid rgba(186,255,0,.35); color: var(--venom); font-weight: 950;
+}
+.brand strong { display: block; line-height: 1.05; font-size: .95rem; }
+.brand span { color: var(--muted); font-size: .74rem; }
+.navlinks { display: flex; gap: 6px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.navlinks a {
+  flex: none; border: 1px solid rgba(255,255,255,.14); border-radius: 999px;
+  background: rgba(255,255,255,.055); color: var(--muted); padding: 7px 11px; font-size: .82rem;
+}
+.navlinks a:active, .navlinks a:hover { border-color: var(--line2); color: var(--text); }
+.panel {
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03)), var(--panel);
+  border-radius: var(--r); box-shadow: var(--shadow);
+}
+.hero { padding: 22px 0 6px; }
+.heroCard { padding: 20px 18px; position: relative; overflow: hidden; }
+.heroCard::after {
+  content: ""; position: absolute; width: 240px; height: 240px; right: -100px; top: -110px;
+  background: radial-gradient(circle, rgba(186,255,0,.18), transparent 65%);
+}
+.kicker { display: inline-flex; align-items: center; gap: 7px; color: var(--venom); font-weight: 900; letter-spacing: .12em; text-transform: uppercase; font-size: .68rem; }
+.pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--venom); box-shadow: 0 0 0 0 rgba(186,255,0,.6); animation: pulse 2s infinite; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(186,255,0,.55); } 70% { box-shadow: 0 0 0 9px rgba(186,255,0,0); } 100% { box-shadow: 0 0 0 0 rgba(186,255,0,0); } }
+h1 { margin: 9px 0 6px; font-size: clamp(1.7rem, 7vw, 2.6rem); line-height: .96; letter-spacing: -.05em; }
+.heroCard p { color: var(--muted); line-height: 1.55; margin: 0; font-size: .92rem; }
+.tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 14px; }
+.tile { border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.05); border-radius: 15px; padding: 11px 10px; text-align: center; }
+.tile b { display: block; color: var(--venom); font-size: 1.25rem; font-weight: 950; letter-spacing: -.03em; }
+.tile span { display: block; color: var(--muted); font-size: .68rem; margin-top: 3px; text-transform: uppercase; letter-spacing: .06em; font-weight: 800; }
+.section { padding: 12px 0; }
+.section h2 { margin: 0 0 4px; font-size: 1.25rem; letter-spacing: -.03em; }
+.section .sub { color: var(--muted); font-size: .84rem; margin: 0 0 10px; line-height: 1.5; }
+.card { padding: 15px; display: grid; gap: 10px; }
+.gameMeta { display: flex; flex-wrap: wrap; gap: 7px; color: var(--soft); font-size: .76rem; }
+.gameMeta b { color: var(--venom); }
+.teamRow {
+  display: flex; justify-content: space-between; align-items: center; gap: 10px;
+  padding: 9px 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,.09); background: rgba(255,255,255,.04);
+}
+.teamRow .nm { font-weight: 700; font-size: .92rem; min-width: 0; }
+.teamRow .nm small { color: var(--soft); font-weight: 800; margin-right: 5px; }
+.teamRow .sc { font-weight: 950; font-variant-numeric: tabular-nums; color: var(--muted); }
+.teamRow.won { border-color: rgba(125,255,155,.3); } .teamRow.won .nm, .teamRow.won .sc { color: var(--win); }
+.teamRow.venom { border-color: var(--line2); } .teamRow.venom .nm { color: var(--venom); }
+.stack { display: grid; gap: 10px; }
+.result { display: inline-flex; padding: 3px 9px; border-radius: 999px; font-size: .7rem; font-weight: 900; width: fit-content; }
+.result.W { color: var(--win); background: rgba(125,255,155,.1); border: 1px solid rgba(125,255,155,.3); }
+.result.L { color: var(--loss); background: rgba(255,113,146,.1); border: 1px solid rgba(255,113,146,.3); }
+.nextCard { border-color: var(--line2); background: linear-gradient(180deg, rgba(186,255,0,.09), rgba(255,255,255,.03)), var(--panel); }
+.bigWhen { font-size: 1.15rem; font-weight: 950; letter-spacing: -.02em; }
+.bigWhen small { display: block; color: var(--muted); font-weight: 600; font-size: .8rem; margin-top: 3px; }
+.chipRow { display: flex; flex-wrap: wrap; gap: 7px; }
+.chip { border: 1px solid rgba(255,255,255,.13); background: rgba(255,255,255,.055); color: var(--muted); padding: 6px 10px; border-radius: 999px; font-size: .78rem; }
+.chip strong { color: var(--text); }
+.gcCard { padding: 12px; }
+.gcCard h2 { padding: 4px 4px 0; }
+#gc-schedule-widget-jrwl { border-radius: 14px; overflow: hidden; background: #fff; min-height: 220px; }
+.gcNote { color: var(--soft); font-size: .76rem; margin: 8px 4px 0; line-height: 1.5; }
+.footer { padding: 22px 0 38px; color: var(--muted); text-align: center; font-size: .82rem; line-height: 1.7; }
+.footer a { color: var(--venom); }
+@media (min-width: 700px) { .stack.two { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="venom.html">
+        <span class="logoMark">TV</span>
+        <span><strong>Texas Venom 12U</strong><span>Girls Rule Dashboard</span></span>
+      </a>
+      <nav class="navlinks">
+        <a href="index.html">Full Tracker</a>
+        <a href="https://www.playncs.com/fastpitch/Teams/Details/87660/texas-venom-12u" target="_blank" rel="noopener">NCS</a>
+        <a href="https://texasvenom.site/" target="_blank" rel="noopener">Venom Site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="heroCard panel">
+        <span class="kicker"><span class="pulse"></span> Girls Rule · 12U C · Sep 19–20</span>
+        <h1>Venom<br>Game Day</h1>
+        <p>Everything Texas Venom 12U at the Girls Rule tournament — seed, results, Sunday bracket path, and the live GameChanger schedule.</p>
+        <div class="tiles" id="tiles"></div>
+      </div>
+    </section>
+
+    <section class="section" id="next">
+      <h2>Bracket Path — Sunday</h2>
+      <p class="sub" id="pathNote"></p>
+      <div class="stack" id="pathStack"></div>
+    </section>
+
+    <section class="section" id="pool">
+      <h2>Pool Play Results</h2>
+      <p class="sub" id="poolSub"></p>
+      <div class="stack two" id="poolStack"></div>
+    </section>
+
+    <section class="section gcSection">
+      <div class="panel gcCard">
+        <h2>Live on GameChanger</h2>
+        <!-- Put this div wherever you want the widget to be embedded -->
+        <div id="gc-schedule-widget-jrwl"></div>
+        <p class="gcNote">Live scores and schedule straight from the team's GameChanger page. If the widget doesn't load, check your connection or open GameChanger directly.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <a href="index.html">Full 12U C tracker</a> · Data from <a id="footNcs" href="#" target="_blank" rel="noopener">NCS Fastpitch</a><br>
+      <span id="scrapedNote"></span>
+    </div>
+  </footer>
+
+  <script src="data/tournament-12uc.js"></script>
+  <script>
+const T = window.TOURNAMENT;
+const TEAM = "Texas Venom 12U";
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+const me = T.standings.find(s => s.team === TEAM) || {};
+const myGames = T.pool_games.filter(g => g.home === TEAM || g.away === TEAM);
+const wins = myGames.filter(g => (g.home === TEAM ? g.home_score > g.away_score : g.away_score > g.home_score)).length;
+
+document.getElementById("tiles").innerHTML = `
+  <div class="tile"><b>#${me.rank ?? "?"}</b><span>Seed of ${T.standings.length}</span></div>
+  <div class="tile"><b>${esc(me.record ?? "—")}</b><span>Pool record</span></div>
+  <div class="tile"><b>${me.rs ?? 0}–${me.ra ?? 0}</b><span>Runs for–against</span></div>`;
+
+const silver = T.brackets.find(b => b.label === "Silver") || T.brackets[1];
+const rows = t => {
+  const isMe = t.name === TEAM;
+  return `<div class="teamRow ${t.winner ? "won" : ""} ${isMe ? "venom" : ""}">
+    <span class="nm">${t.seed ? `<small>${esc(t.seed)}</small>` : ""}${esc(t.name || "TBD")}</span>
+    <span class="sc">${esc(t.score || "—")}</span></div>`;
+};
+// Venom's known path: their first bracket game, then the games that reference it onward.
+const allSilver = silver.sections.flatMap(sec => sec.games.map(g => ({...g, section: sec.name})));
+const firstIdx = allSilver.findIndex(g => g.top.name === TEAM || g.bottom.name === TEAM);
+const first = allSilver[firstIdx];
+const cards = [];
+if (first) {
+  cards.push({ g: first, label: "First up", hot: true });
+  const num = (first.num.match(/\d+/) || [])[0];
+  for (const g of allSilver) {
+    if (g === first) continue;
+    if ([g.top.name, g.bottom.name].some(n => n === TEAM || n === `Winner of Game ${num}` || n === `Loser of Game ${num}`)) {
+      cards.push({ g, label: g.top.name === TEAM || g.bottom.name === TEAM ? "Playing" : (g.top.name + g.bottom.name).includes("Winner") ? "If they win" : "If they lose" });
+    }
+  }
+}
+document.getElementById("pathNote").textContent = me.rank
+  ? `Seeded #${me.rank}, Venom opens in the Silver bracket. Win and they climb toward the 3:30 PM championship game; a loss drops them to the elimination side with a path back through the 5:00 PM game.`
+  : "Bracket path for Sunday.";
+document.getElementById("pathStack").innerHTML = cards.length ? cards.map(({g, label, hot}) => `
+  <article class="card panel ${hot ? "nextCard" : ""}">
+    <div class="gameMeta"><b>${esc(label)}</b><span>${esc(g.section)} · ${esc(g.num)}</span></div>
+    <div class="bigWhen">${esc(g.when)}<small>${esc(g.place)}</small></div>
+    ${rows(g.top)}${rows(g.bottom)}
+  </article>`).join("") : `<div class="card panel">Bracket not posted yet.</div>`;
+
+document.getElementById("poolSub").textContent =
+  `Saturday: ${wins} win${wins === 1 ? "" : "s"}, ${myGames.length - wins} losses · finished #${me.rank ?? "?"} of ${T.standings.length}.`;
+document.getElementById("poolStack").innerHTML = myGames.map(g => {
+  const home = g.home === TEAM, opp = home ? g.away : g.home;
+  const us = home ? g.home_score : g.away_score, them = home ? g.away_score : g.home_score;
+  const played = us != null && them != null;
+  const res = !played ? "" : us > them ? "W" : us < them ? "L" : "T";
+  return `
+    <article class="card panel">
+      <div class="gameMeta"><b>Game ${esc(g.game)}</b><span>${esc(g.time)}</span><span>· ${esc(g.field)}</span></div>
+      ${res ? `<span class="result ${res}">${res === "W" ? "WIN" : "LOSS"} ${us}–${them}</span>` : ""}
+      <div class="teamRow venom ${played && us > them ? "won" : ""}"><span class="nm">${esc(TEAM)}</span><span class="sc">${played ? us : "—"}</span></div>
+      <div class="teamRow ${played && them > us ? "won" : ""}"><span class="nm">${esc(opp)}</span><span class="sc">${played ? them : "—"}</span></div>
+    </article>`;
+}).join("");
+
+document.getElementById("footNcs").href = T.event.schedule_url;
+const when = T.event.scraped_at ? new Date(T.event.scraped_at).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" }) : "";
+document.getElementById("scrapedNote").textContent = `NCS data last refreshed ${when} — run scripts/refresh.py to update.`;
+  </script>
+
+  <!-- Put this before the closing </body> tag -->
+  <script src="https://widgets.gc.com/static/js/sdk.v1.js"></script>
+  <script>
+    window.addEventListener("load", function () {
+      if (window.GC && window.GC.team && window.GC.team.schedule) {
+        window.GC.team.schedule.init({
+          target: "#gc-schedule-widget-jrwl",
+          widgetId: "cc5c036d-3d6b-4480-845a-5faf19aeb890",
+          maxVerticalGamesVisible: 4,
+        });
+      } else {
+        var el = document.getElementById("gc-schedule-widget-jrwl");
+        el.style.background = "transparent";
+        el.innerHTML = '<p style="color:#9f95ad;padding:14px;margin:0;font-size:.85rem">GameChanger widget couldn\'t load (offline?).</p>';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -143,9 +143,31 @@ tr.hl td strong { color: var(--pink2); }
 .footer a { color: var(--pink2); }
 @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .stats { grid-template-columns: repeat(2,1fr); } .control { grid-template-columns: 1fr; } }
 @media (max-width: 620px) {
-  .container { width: min(100% - 22px, var(--max)); }
+  :root { --radius: 18px; }
+  .container { width: min(100% - 18px, var(--max)); }
+  .nav { padding: 9px 0; gap: 8px; }
+  .brand strong { font-size: .92rem; }
+  .brand span { font-size: .72rem; }
+  .logoMark { width: 40px; height: 40px; border-radius: 12px; }
+  .navlinks { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; width: 100%; justify-content: flex-start; scrollbar-width: none; }
+  .navlinks::-webkit-scrollbar { display: none; }
+  .navlinks a { flex: none; padding: 7px 11px; font-size: .82rem; }
   .nav { flex-direction: column; align-items: flex-start; }
-  .stats { grid-template-columns: repeat(2,1fr); }
+  .hero { padding: 26px 0 12px; }
+  .heroCard { padding: 18px 16px; }
+  .heroCard p { font-size: .92rem; }
+  .chip { font-size: .78rem; padding: 6px 9px; }
+  .stats { grid-template-columns: repeat(2,1fr); gap: 8px; }
+  .stat { padding: 12px; min-height: 0; border-radius: 15px; }
+  .stat .label { font-size: .74rem; }
+  .section { padding: 14px 0; }
+  .control { padding: 12px; }
+  table { min-width: 560px; }
+  th, td { padding: 9px 10px; font-size: .86rem; }
+  .gameCard { padding: 12px 13px; border-radius: 16px; }
+  .teamRow { padding: 8px 10px; }
+  .teamRow .nm { font-size: .9rem; }
+  .btn { padding: 8px 12px; font-size: .88rem; }
 }
 @media print {
   body { background: #fff; color: #111; }
@@ -168,6 +190,7 @@ tr.hl td strong { color: var(--pink2); }
           <a href="#standings">Standings</a>
           <a href="#pool">Pool Play</a>
           <a href="#bracket">Brackets</a>
+          <a href="venom.html">Venom Dashboard</a>
           <a id="ncsLink" href="#" target="_blank" rel="noopener">NCS Live Page</a>
         </nav>
       </div>
@@ -183,6 +206,7 @@ tr.hl td strong { color: var(--pink2); }
             <a class="btn primary" href="#standings">Standings</a>
             <a class="btn" href="#pool">Pool Results</a>
             <a class="btn" href="#bracket">Brackets</a>
+            <a class="btn" href="venom.html">🐍 Venom Dashboard</a>
           </div>
           <div class="chips" id="eventChips"></div>
           <div class="stats" id="statCards"></div>
